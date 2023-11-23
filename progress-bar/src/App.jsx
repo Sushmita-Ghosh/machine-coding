@@ -5,6 +5,8 @@ import { useEffect } from "react";
 function App() {
   const [value, setValue] = useState(0); // to change the percentage value
 
+  // to show complete message
+  const [success, setSuccess] = useState(false);
   useEffect(() => {
     const interval = setInterval(() => {
       // setValue(value + 1);
@@ -21,12 +23,13 @@ function App() {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [value]);
 
   return (
     <div className="app">
       <span>Progress Bar</span>
-      <ProgressBar value={value} />
+      <ProgressBar value={value} onComplete={() => setSuccess(true)} />
+      <span>{success ? "Complete" : "Loading...."}</span>
     </div>
   );
 }

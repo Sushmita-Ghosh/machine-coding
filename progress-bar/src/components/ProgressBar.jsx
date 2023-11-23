@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { MAX, MIN } from "../../constants";
 
-const ProgressBar = ({ value }) => {
+const ProgressBar = ({ value = 0, onComplete = () => {} }) => {
   const [percent, setPercent] = useState(value);
 
   useEffect(() => {
@@ -11,7 +11,10 @@ const ProgressBar = ({ value }) => {
     // Math.max will handle for negative values
     // Math.min will handle for values greater than 100
     setPercent(Math.min(MAX, Math.max(value, MIN)));
-  }, [value]);
+    if (value >= MAX) {
+      onComplete();
+    }
+  }, [value, onComplete]);
   return (
     <div className="progress">
       <span style={{ color: percent > 49 ? "white" : "black" }}>
