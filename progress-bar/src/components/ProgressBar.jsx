@@ -16,7 +16,14 @@ const ProgressBar = ({ value }) => {
       <span style={{ color: percent > 49 ? "white" : "black" }}>
         {percent.toFixed()} %
       </span>
-      <div style={{ width: `${percent}%` }} /> {/* This is for the fill */}
+      <div
+        style={{ width: `${percent}%` }}
+        role="progressbar"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={percent.toFixed()}
+      />
+      {/* This is for the fill */}
     </div>
   );
 };

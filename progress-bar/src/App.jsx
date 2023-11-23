@@ -9,12 +9,18 @@ function App() {
     const interval = setInterval(() => {
       // setValue(value + 1);
       // we can't do the above as setInterval runs after the very end of our function so it doesn't have the context of the value
-      setValue((value) => value + 1);
+
+      if (value > 100) {
+        clearInterval(interval);
+      } else {
+        setValue((value) => value + 1);
+      }
     }, 100);
 
-    if (value > 100) {
+    // clean up
+    return () => {
       clearInterval(interval);
-    }
+    };
   }, []);
 
   return (
