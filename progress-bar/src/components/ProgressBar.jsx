@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
+import { MAX, MIN } from "../../constants";
 
 const ProgressBar = ({ value }) => {
   const [percent, setPercent] = useState(value);
@@ -9,7 +10,7 @@ const ProgressBar = ({ value }) => {
     // so we can use Math.min and Math.max
     // Math.max will handle for negative values
     // Math.min will handle for values greater than 100
-    setPercent(Math.min(100, Math.max(value, 0)));
+    setPercent(Math.min(MAX, Math.max(value, MIN)));
   }, [value]);
   return (
     <div className="progress">
@@ -17,7 +18,11 @@ const ProgressBar = ({ value }) => {
         {percent.toFixed()} %
       </span>
       <div
-        style={{ width: `${percent}%` }}
+        // style={{ width: `${percent}%` }} // this is not good for performance
+        style={{
+          transform: `scaleX(${percent / MAX})`,
+          transformOrigin: "left",
+        }}
         role="progressbar"
         aria-valuemin={0}
         aria-valuemax={100}
