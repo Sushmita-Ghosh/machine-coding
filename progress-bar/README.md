@@ -15,6 +15,7 @@ The reference video is here : [@RoadsideCoder](https://www.youtube.com/watch?v=9
 ### Accessibility
 
 [Role tag](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/progressbar_role)
+
 [aria-value\*\*](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/progressbar_role)
 
 ### Scalability
@@ -22,3 +23,9 @@ The reference video is here : [@RoadsideCoder](https://www.youtube.com/watch?v=9
 - The progress bar can be scalable if we have functions like onStart, on Complete, onSomePercentage - so that we can controll the progress bar from outside
 
 - we can add custom classes / custom styles to it from outside.
+
+
+### How it looks?
+https://github.com/Sushmita-Ghosh/machine-coding/assets/82622059/9bbbaed8-1797-4b2b-ba47-d064232e3374
+
+
