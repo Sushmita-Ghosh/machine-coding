@@ -1,4 +1,12 @@
 .App {
   text-align: center;
-  font-family: "Courier New", Courier, monospace;
+  font-family: sans-serif;
+}
+
+.otp-input {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  font-size: 1.2em;
+  text-align: center;
 }
