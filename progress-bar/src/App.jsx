@@ -10,7 +10,8 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       // setValue(value + 1);
-      // we can't do the above as setInterval runs after the very end of our function so it doesn't have the context of the value
+      // we can't do the above as setInterval runs after the very end of our
+      // function so it doesn't have the context of the value
 
       if (value > 100) {
         clearInterval(interval);
