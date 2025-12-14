@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/static/Inter-SemiBold.ttf");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/static/Inter-Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+}
+
+
+body {
+  font-family: "Inter","Roboto Mono", monospace;
+  display: flex;
+  font-weight: 400;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+
+h1 {
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.traffic-light-container{
+    background-color: #000;
+    border-radius: 7px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    padding: 10px;
+}
+
+
+.traffic-light {
+    --size: 100px;
+    background-color: #555;
+    border-radius: var(--size);
+    height: var(--size);
+    width: var(--size);
+}
