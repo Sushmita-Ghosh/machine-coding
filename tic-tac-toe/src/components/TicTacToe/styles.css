@@ -1,0 +1,143 @@
+.game {
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.tic-tac-toe {
+  width: 300px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  position: relative;
+}
+
+.cell {
+  display: flex; /* 🔥 critical */
+  align-items: center; /* center X/O vertically */
+  justify-content: center; /* center X/O horizontally */
+  width: 100px;
+  height: 100px;
+  font-size: 40px;
+  font-weight: 300;
+  border: 4px solid transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: #fff;
+  outline: none;
+}
+
+.cell:hover {
+  background-color: #f0f0f0;
+}
+
+.cell.disabled {
+  pointer-events: none;
+}
+
+/* Right border */
+.cell:nth-child(1),
+.cell:nth-child(4),
+.cell:nth-child(7),
+.cell:nth-child(2),
+.cell:nth-child(5),
+.cell:nth-child(8) {
+  border-right: 4px solid steelblue;
+}
+
+/* bottom border */
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3),
+.cell:nth-child(4),
+.cell:nth-child(5),
+.cell:nth-child(6) {
+  border-bottom: 4px solid steelblue;
+}
+
+.status {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.reset-button {
+  padding: 10px 20px;
+  font-size: 15px;
+  background-color: salmon;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer;
+}
+
+.reset-button:hover {
+  background-color: sandybrown;
+}
+
+.winning-line {
+  position: absolute;
+  background-color: slateblue;
+}
+
+/* Game Title */
+h1 {
+  /* font-family: "Arial", sans-serif; */
+  font-size: 3rem;
+  text-align: center;
+  color: #ff7f50; /* coral-ish to match X color */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+/* Status message */
+.status p {
+  font-size: 1.5rem;
+  color: slateblue;
+  font-weight: bold;
+  /* margin-bottom: 15px; */
+}
+
+/* Reset button next to status */
+/* .reset-button {
+  display: block;
+  margin: 0 auto;
+  padding: 8px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff6b6b; /* soft red to match theme */
+/* border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}  */
+
+/* .reset-button:hover {
+  background-color: #ff4c4c;
+} */
+
+/**
+Need to use grid here 
+Your .cell buttons are inline / inline-block elements, and inline elements align to the text baseline.
+
+When you click:
+
+Empty cell → no text → baseline is different
+
+Cell gets "X" or "O" → text baseline appears
+
+Browser pushes the button downward to align text
+
+When game ends (3 in a row) → re-render → baseline recalculated → grid snaps back
+
+That’s exactly why:
+
+“when you click the btn it goes down — when you reach 3 in a line it aligns back again”
+
+This is classic baseline alignment behavior.
+*/
