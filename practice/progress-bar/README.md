@@ -1,16 +1,58 @@
-# React + Vite
+# Progress Bar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Why `translateX` Uses Negative Values in a Progress Bar
 
-Currently, two official plugins are available:
+Let’s go step by step.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 1️⃣ How `translateX()` Works
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```css
+transform: translateX(X);
+```
 
-## Expanding the ESLint configuration
+- Positive X → moves the element to the right
+- Negative X → moves the element to the left
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```css
+translateX(20px);   /* moves right */
+translateX(-20px);  /* moves left */
+```
+
+So, if progress is 20% the value of translateX should be -80% (progress - 100)
+
+## 1️⃣ inset: 0
+
+inset is a shorthand for these four properties:
+
+```css
+top
+right
+bottom
+left
+```
+
+So:
+
+inset: 0;
+
+is exactly the same as:
+
+```css
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+```
+
+### transform-origin: left;
+
+“All transforms should start from the left edge.”
+
+## aria-valuetext={`${progress}% complete`}
+
+Why:
+Screen readers will announce something meaningful like:
+
+“Progress bar, 75 percent complete”

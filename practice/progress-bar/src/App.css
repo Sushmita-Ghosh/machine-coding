@@ -9,7 +9,7 @@
   font-size: 5rem;
 }
 
-.outer {
+/* .outer {
   display: flex;
   border: 1px solid black;
   width: 1000px;
@@ -23,8 +23,37 @@
   width: 100%;
   padding: 10px;
   text-align: center;
-}
+  transition: 0.4s ease-in;
+} */
 
 .progress-bar-container {
   margin: 10px;
+}
+
+.outer {
+  position: relative;
+  width: 1000px;
+  border: 1px solid black;
+  border-radius: 50px;
+  overflow: hidden;
+  height: 60px;
+}
+
+.bar {
+  position: absolute;
+  inset: 0;
+  background-color: aqua;
+  transform-origin: left;
+  transition: transform 0.4s ease-in;
+}
+
+.label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 2rem;
+  color: black;
 }
