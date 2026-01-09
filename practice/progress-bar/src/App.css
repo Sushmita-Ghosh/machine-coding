@@ -1,0 +1,30 @@
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 5rem;
+}
+
+.outer {
+  display: flex;
+  border: 1px solid black;
+  width: 1000px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.inner {
+  background-color: aqua;
+  font-size: 2rem;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.progress-bar-container {
+  margin: 10px;
+}
