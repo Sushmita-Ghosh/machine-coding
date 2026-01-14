@@ -1,5 +1,8 @@
 # Progress Bar
 
+<img width="1311" height="418" alt="image" src="https://github.com/user-attachments/assets/db004bbd-518e-4701-9f6d-3fec919052f5" />
+
+
 # Why `translateX` Uses Negative Values in a Progress Bar
 
 Let’s go step by step.
