@@ -35,8 +35,48 @@ When you press Backspace:
 
 💥 That’s exactly what’s happening.
 
+### 🧠 Key Insight (Interview Gold)
+
+* Focus change affects where the browser applies the backspace deletion.
+* “Backspace deletes from the currently focused input. If focus changes before deletion completes, the browser deletes the wrong input. Preventing default behavior and controlling deletion order fixes this.”
+* “Keyboard events fire before the DOM updates, so focus manipulation must be carefully ordered.”
+* **We need to control the sequence**
+
+---
+
+### 🧠 Why This Happens (Root Cause)
+
+🔹 Key fact:
+
+* Backspace has a default browser behavior.
+* When you press Backspace:
+
+  * The browser deletes the character in the currently focused input
+  * If you change focus too early, the browser deletes from the newly focused input
+
+💥 That’s exactly what’s happening.
+
+---
+
+### Timeline (important 👇)
+
+1. Backspace key pressed
+2. JS runs → `focus()` is called
+3. Focus jumps to previous input
+4. Browser continues default backspace behavior
+
+❌ Deletes value in previous input
+
+So:
+
+* Focus moved **before deletion finished**
+
+
 
 ## Ref Callbacks:
+
+_“A callback ref is a function ref that React calls with the DOM node, giving more control over how refs are stored or handled.”_
+
 ### 🧠 Step 2: What is ref on an input?
 
 When you do: `<input ref={someRef} />`
