@@ -1,0 +1,67 @@
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+
+.tab-container {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.tabs{
+  padding: 10px 15px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px 5px 0 0;
+  background-color: #f9f9f9;
+  font-size: large;
+}
+
+.profile-form-container, .interests-form-container, .settings-form-container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 0 5px 5px 5px;
+  background-color: #fff;
+  width: 500px;
+  min-width: 500px;
+}
+
+
+.profile-form-fields, .interests-form-fields, .settings-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+}
+
+
+.input-text, .input-select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+
+.label {
+ font-size: large;
+  margin-bottom: 5px;
+}
+
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.navigation-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
