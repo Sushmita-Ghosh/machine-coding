@@ -1,45 +1,40 @@
 .products-container {
-display: flex;
-    justify-content: center;
-    align-items: center;
-flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
-
 
 .product {
-    width:250px;
-    height: 250px;
-   border: 1px solid black;
-   padding: 10px;
-    margin: 10px
+  width: 250px;
+  height: 250px;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
 }
-
 
 .product-image {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
 }
 
-.product-title{
-    text-align: center;
+.product-title {
+  text-align: center;
 }
-
-
 
 .pagination-component {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .pagination {
-    padding: 5px;
-    margin :5px;
-    border: 1px solid black;
-    cursor: pointer
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid black;
+  cursor: pointer;
 }
 
-
 .active {
-    background-color: aqua;
+  background-color: aqua;
 }
