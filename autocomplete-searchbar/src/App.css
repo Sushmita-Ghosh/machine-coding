@@ -1,0 +1,21 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar {
+  padding: 5px;
+  width: 700px;
+}
+
+.results-container {
+  border: 1px solid gray;
+  width: 700px;
+  padding: 5px;
+}
+
+.result {
+  padding: 2px;
+}
