@@ -19,3 +19,7 @@
 .result {
   padding: 2px;
 }
+
+.result:hover {
+  background-color: beige;
+}
