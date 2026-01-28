@@ -20,6 +20,10 @@
   padding: 2px;
 }
 
-.result:hover {
+/* .result:hover {
+  background-color: beige;
+} */
+
+.result.active {
   background-color: beige;
 }
