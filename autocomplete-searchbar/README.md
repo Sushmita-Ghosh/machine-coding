@@ -102,3 +102,146 @@ setInput(results[nextIndex].name); // update input text
 _💡 In short:_  
 _We don’t use keyUp here because the behavior would feel slightly delayed and less smooth._  
 _keyDown gives instant keyboard navigation, prevents the cursor from jumping, and is what almost all production autocompletes do._
+
+# ARIA Labels in Autocomplete Components
+
+When building interactive components like autocompletes or dropdowns, **accessibility** is crucial so that users relying on **screen readers or assistive technologies** can navigate and use them effectively. ARIA (Accessible Rich Internet Applications) attributes help communicate **state, role, and behavior** of UI elements.
+
+---
+
+## 1. `role="combobox"`
+
+**What:**
+
+- Declares that an input is a **combobox**, i.e., an input that controls an associated list of options.
+
+**Why:**
+
+- Screen readers announce the input as a **searchable/selectable field**.
+- Users know they can type to filter options.
+
+**Example:**
+
+```html
+<input type="text" role="combobox" />
+```
+
+## 2. `aria-expanded`
+
+**What:**
+
+- Indicates whether the dropdown is currently visible.
+- Accepts `true` or `false`.
+
+**Why:**
+
+- Tells screen readers whether the list of options is open.
+- Helps users know if results are available.
+
+**Example:**
+
+```html
+<input type="text" role="combobox" aria-expanded="true" />
+```
+
+## 3. `aria-controls`
+
+**What:**
+
+- References the **ID of the element** that the input controls, usually the results container.
+
+**Why:**
+
+- Helps assistive technologies associate the input with the dropdown list.
+- Screen readers can inform the user that the input is connected to a set of options.
+
+**Example:**
+
+```html
+<input type="text" aria-controls="results-list" />
+<div id="results-list">...</div>
+```
+
+## 4. `aria-activedescendant`
+
+**What:**
+
+- Specifies which **child element of the listbox** is currently highlighted.
+- Should match the `id` of the active option.
+
+**Why:**
+
+- When navigating with the keyboard (ArrowUp / ArrowDown), screen readers announce the **currently active item**.
+- Users always know which option is highlighted.
+
+**Example:**
+
+```html
+<input aria-activedescendant="result-2" />
+<div id="result-2">Apple Pie</div>
+```
+
+## 5. `role="listbox"`
+
+**What:**
+
+- Indicates that a container holds a **list of selectable options**.
+
+**Why:**
+
+- Screen readers recognize it as a selectable list controlled by the input.
+- Users understand the relationship between the input and the options.
+
+**Example:**
+
+```html
+<div role="listbox" id="results-list">...</div>
+```
+
+## 6. `role="option"`
+
+**What:**
+
+- Marks each individual **item in the list** as selectable.
+
+**Why:**
+
+- Screen readers announce each option properly.
+- Combined with `aria-selected`, it indicates which item is currently active or highlighted.
+
+**Example:**
+
+```html
+<div role="option" aria-selected="true">Apple Pie</div>
+<div role="option" aria-selected="false">Banana Bread</div>
+```
+
+## 7. `aria-selected`
+
+**What:**
+
+- Indicates whether an option is **currently selected or highlighted**.
+
+**Why:**
+
+- Provides feedback to the user navigating with the keyboard.
+- Ensures the screen reader knows which item is active.
+
+**Example:**
+
+```html
+<div role="option" aria-selected="true">Apple Pie</div>
+<div role="option" aria-selected="false">Banana Bread</div>
+```
+
+## ✅ Summary of ARIA for Autocomplete
+
+| ARIA Attribute          | Purpose / Why                             |
+| ----------------------- | ----------------------------------------- |
+| `role="combobox"`       | Marks input as searchable/selectable      |
+| `aria-expanded`         | Communicates if the dropdown is open      |
+| `aria-controls`         | Links input to the results container      |
+| `aria-activedescendant` | Highlights currently active option        |
+| `role="listbox"`        | Marks container as selectable list        |
+| `role="option"`         | Marks each item as selectable             |
+| `aria-selected`         | Indicates which option is active/selected |
