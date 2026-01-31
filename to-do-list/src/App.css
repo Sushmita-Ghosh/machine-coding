@@ -1,0 +1,46 @@
+body {
+  font-family: sans-serif;
+  -webkit-font-smoothing: auto;
+  -moz-font-smoothing: auto;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: auto;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.main-container {
+  padding: 10px;
+}
+
+.create-todo-container {
+}
+
+.input-add {
+  padding: 10px;
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+.add-btn {
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.padding-class {
+  padding: 5px;
+}
+
+.delete-btn {
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
