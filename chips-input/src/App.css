@@ -1,0 +1,35 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  padding: 8px;
+  width: 200px;
+}
+
+.chips-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.chip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+  border-radius: 20px;
+  border: 1px solid salmon;
+  background-color: salmon;
+  height: 20px;
+}
+
+.btn {
+  font-size: small;
+  background-color: transparent;
+  border: 0;
+}
