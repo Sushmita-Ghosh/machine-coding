@@ -1,0 +1,19 @@
+.header {
+  font-size: 3rem;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-box {
+  height: 50px;
+  width: 50px;
+  font-size: 40px;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+}
