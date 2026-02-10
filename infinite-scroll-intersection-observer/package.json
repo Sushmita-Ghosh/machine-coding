@@ -1,5 +1,5 @@
 {
-  "name": "infinite-scroll",
+  "name": "infinite-scroll-intersection-observer",
   "private": true,
   "version": "0.0.0",
   "type": "module",

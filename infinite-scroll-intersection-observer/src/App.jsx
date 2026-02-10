@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <div>
-      <h1 className="heading">Infinite Scroll</h1>
+      <h1 className="heading">Infinite Scroll With InterSection Observer</h1>
       <Post data={data} />
     </div>
   );
