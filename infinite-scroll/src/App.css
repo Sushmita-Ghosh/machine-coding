@@ -30,3 +30,8 @@
   text-align: center;
   font-size: 40px;
 }
+
+.post-div {
+  height: 80vh;
+  overflow-y: auto;
+}
